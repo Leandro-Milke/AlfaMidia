@@ -24,12 +24,13 @@ public class CarroRepository {
         this.carroBD.put(carro.getPlaca(), carro);
     }
 
-    public void remover(Integer matricula) {
-        this.carroBD.remove(matricula);
+    public void remover(Integer placa) {
+        this.carroBD.remove(placa);
     }
 
-    public Carro buscarPorMatricula(Integer placa) {
+    public Carro buscarPorPlaca(Integer placa) {
         return this.carroBD.get(placa);
     }
+
 
 }
