@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class CarroRepository {
 
-    private Map<Integer, Carro> carroBD;
+    private Map<String, Carro> carroBD;
 
     public CarroRepository() {
         this.carroBD = new TreeMap<>();
@@ -24,11 +24,11 @@ public class CarroRepository {
         this.carroBD.put(carro.getPlaca(), carro);
     }
 
-    public void remover(Integer placa) {
+    public void remover(String placa) {
         this.carroBD.remove(placa);
     }
 
-    public Carro buscarPorPlaca(Integer placa) {
+    public Carro buscarPorPlaca(String placa) {
         return this.carroBD.get(placa);
     }
 

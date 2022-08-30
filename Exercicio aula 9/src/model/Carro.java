@@ -2,23 +2,23 @@ package model;
 
 public class Carro {
 
-    private int placa;
+    private String placa;
     private String cor;
     private String marca;
     private String modelo;
 
-    public Carro(Integer placa, String cor, String marca, String modelo) {
+    public Carro(String placa, String cor, String marca, String modelo) {
         this.placa = placa;
         this.cor = cor;
         this.marca = marca;
         this.modelo = modelo;
     }
 
-    public int getPlaca() {
+    public String getPlaca() {
         return placa;
     }
 
-    public void setPlaca(int placa) {
+    public void setPlaca(String placa) {
         this.placa = placa;
     }
 

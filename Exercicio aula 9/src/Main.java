@@ -12,6 +12,7 @@ public class Main {
         boolean continua = true;
 
         int menu;
+        String placa = "";
 
         do {
 
@@ -22,26 +23,29 @@ public class Main {
                     "[4] - Para remover veículo \n" +
                     "[0] - Para sair \n");
             menu = sc.nextInt();
+            placa = sc.nextLine();  // para evitar o erro pela tecla enter
             if (menu == 0) break;
             else if (menu == 1) {
                 System.out.println("Digite a placa");
-                int placa = sc.nextInt();
-                String x = sc.nextLine();
-                System.out.println("Digite a cor");
-                String cor = sc.nextLine();
-                System.out.println("Digite a marca");
-                String marca = sc.nextLine();
-                System.out.println("Digite e o modelo");
-                String modelo = sc.nextLine();
+                placa = sc.nextLine();
+                if(repository.buscarPorPlaca(placa) == null) {
+                    System.out.println("Digite a cor");
+                    String cor = sc.nextLine();
+                    System.out.println("Digite a marca");
+                    String marca = sc.nextLine();
+                    System.out.println("Digite e o modelo");
+                    String modelo = sc.nextLine();
 
-                Carro carro = new Carro(placa,cor,marca,modelo);
-                repository.salvar(carro);
+                    Carro carro = new Carro(placa, cor, marca, modelo);
+                    repository.salvar(carro);
+                }
+                else System.out.println(" Já existe cadastro com essa placa");
 
             }
             else if (menu == 2) {
                 System.out.println("Busca por veículo \n");
                 System.out.println("Digite a placa \n");
-                int placa = sc.nextInt();
+                placa = sc.nextLine();
                 System.out.println(repository.buscarPorPlaca(placa));
 
             }
@@ -52,13 +56,13 @@ public class Main {
             }
             else if (menu == 4) {
                 System.out.println("\n Para remover o veículo digite a placa:");
-                int placa = sc.nextInt();
+                placa = sc.nextLine();
                 repository.remover(placa);
 
             }
             else System.out.println("opção inválida");
 
-        }while (continua != false);
+        }while (continua);
 
        // System.out.println(repository);
 
