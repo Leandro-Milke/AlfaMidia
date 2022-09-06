@@ -6,6 +6,7 @@ import repository.ClienteRepository;
 import repository.VendedorRepository;
 
 
+import java.sql.Array;
 import java.util.Scanner;
 
 public class Main {
@@ -39,7 +40,6 @@ public class Main {
                     break;
             }
         }while (continua);
-
 
     }
 }
