@@ -1,9 +1,10 @@
 
 
 import menu.Menu;
+import model.Cliente;
 import repository.AdministradorRepository;
-import repository.ClienteRepository;
 import repository.VendedorRepository;
+import service.ClienteService;
 
 
 import java.sql.Array;
@@ -13,18 +14,19 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        AdministradorRepository admRepository = new AdministradorRepository();
-        ClienteRepository clienteRepository = new ClienteRepository();
-        VendedorRepository vendedorRepository = new VendedorRepository();
-        VendedorRepository veiculoRepository = new VendedorRepository();
+        ClienteService clienteService = new ClienteService(sc);
 
         boolean continua = true;
         do {
             Menu.menu1();
             int opcao1 = sc.nextInt();
+            sc.nextLine();
+
             switch (opcao1){
                 case 1:
                     Menu.menuCliente1();
+                    String email = sc.nextLine();
+                    Cliente cliente = clienteService.confereEmail(email);
                     break;
                 case 2:
                     Menu.menuVendedor1();
