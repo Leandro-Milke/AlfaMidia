@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AlfaMidia.iml" filepath="$PROJECT_DIR$/.idea/AlfaMidia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex1_aula3/Ex1_aula3.iml" filepath="$PROJECT_DIR$/Ex1_aula3/Ex1_aula3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex1_semana3/Ex1_semana3.iml" filepath="$PROJECT_DIR$/Ex1_semana3/Ex1_semana3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex2_semana3/Ex2_semana3.iml" filepath="$PROJECT_DIR$/Ex2_semana3/Ex2_semana3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex3_semana3/Ex3_semana3.iml" filepath="$PROJECT_DIR$/Ex3_semana3/Ex3_semana3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio aula 9/Exercicio aula 9.iml" filepath="$PROJECT_DIR$/Exercicio aula 9/Exercicio aula 9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projeto Aluguel Veiculo/Projeto Aluguel Veiculo.iml" filepath="$PROJECT_DIR$/Projeto Aluguel Veiculo/Projeto Aluguel Veiculo.iml" />
+    </modules>
+  </component>
+</project>

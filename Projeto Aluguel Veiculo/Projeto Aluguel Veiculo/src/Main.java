@@ -1,7 +1,10 @@
+
+
 import menu.Menu;
 import repository.AdministradorRepository;
 import repository.ClienteRepository;
 import repository.VendedorRepository;
+
 
 import java.util.Scanner;
 
@@ -14,9 +17,7 @@ public class Main {
         VendedorRepository vendedorRepository = new VendedorRepository();
         VendedorRepository veiculoRepository = new VendedorRepository();
 
-
         boolean continua = true;
-
         do {
             Menu.menu1();
             int opcao1 = sc.nextInt();
