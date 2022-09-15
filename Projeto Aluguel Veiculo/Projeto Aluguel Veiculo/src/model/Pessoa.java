@@ -11,6 +11,11 @@ public abstract class Pessoa {
     private String senha;
 
     public Pessoa(String nome, String email, String cidade, String senha) {
+        super();
+        this.nome = nome;
+        this.email = email;
+        this.cidade = cidade;
+        this.senha = senha;
 
         this.id = Contador.proximoId();
     }
@@ -55,4 +60,14 @@ public abstract class Pessoa {
         this.senha = senha;
     }
 
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
+    }
 }

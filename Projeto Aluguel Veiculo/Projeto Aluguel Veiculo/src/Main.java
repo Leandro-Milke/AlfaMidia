@@ -16,6 +16,11 @@ public class Main {
 
         ClienteService clienteService = new ClienteService(sc);
 
+      //  Cliente cliente1 = new Cliente("Leandro", "qwq","poa","123");
+
+       // System.out.println(cliente1);
+
+
         boolean continua = true;
         do {
             Menu.menu1();

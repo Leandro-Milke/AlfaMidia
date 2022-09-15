@@ -17,11 +17,15 @@ public class ClienteService {
     }
 
     public Cliente confereEmail(String email){
+        System.out.println("conferindo e-mail");
 
         List<Cliente> clientesCadastrados = clienteRepository.buscarTodos();
 
         for(Cliente cliente : clientesCadastrados){
+            System.out.println(cliente);
+            System.out.println("for clientes cadastrador");
             if(cliente.getEmail().equals(email)){
+                System.out.println("Cliente encontrado");
                 return cliente;
             }
         }
@@ -46,6 +50,8 @@ public class ClienteService {
         String senha = sc.nextLine();
 
         Cliente cliente = new Cliente(nome, email, cidade, senha);
+
+        System.out.println("cliente cadastrado:" + cliente);
 
         this.clienteRepository.salvar(cliente);
 
