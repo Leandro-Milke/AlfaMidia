@@ -85,8 +85,17 @@ public class Veiculo {
         this.valorLocacao = valorLocacao;
     }
 
+    public Status getStatus() {
+        return status;
+    }
 
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 
+    public String toString(){
+        return this.id + " - " + this.modelo + " " + this.marca + " " + this.cor + ", valor: " + this.valorLocacao;
+    }
 
     public enum Tipo {
         CARRO,

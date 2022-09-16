@@ -2,9 +2,10 @@
 
 import menu.Menu;
 import model.Cliente;
-import repository.AdministradorRepository;
-import repository.VendedorRepository;
+import model.Veiculo;
+import service.AdminService;
 import service.ClienteService;
+import service.VeiculoService;
 
 
 import java.sql.Array;
@@ -15,10 +16,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         ClienteService clienteService = new ClienteService(sc);
-
-      //  Cliente cliente1 = new Cliente("Leandro", "qwq","poa","123");
-
-       // System.out.println(cliente1);
+        VeiculoService veiculoService = new VeiculoService(sc);
+        AdminService adminService = new AdminService(sc, veiculoService);
 
 
         boolean continua = true;
@@ -32,12 +31,40 @@ public class Main {
                     Menu.menuCliente1();
                     String email = sc.nextLine();
                     Cliente cliente = clienteService.confereEmail(email);
+                    boolean senhaCorreta = false;
+                    for (int i = 0; i<3; i++) {
+                        System.out.println("Digite a sua senha: ");
+                        String senha = sc.nextLine();
+                        senhaCorreta = clienteService.conferirSenha(cliente, senha);
+                        if(!senhaCorreta){
+                            System.out.println("Senha incorreta, tente novamente!!");
+                        }else {
+                            break;
+                        }
+                    }
+                    if (!senhaCorreta) break;
+
+                    Menu.menuCliente2();
+                    int opcao2 = sc.nextInt();
+
+                    if (opcao2 == 1){
+                        System.out.println("Digite o número referente ao carro deseeado");
+                        veiculoService.buscarTodosVeiculosLivres();
+                        int opcaoCarro = sc.nextInt();
+                        Veiculo veiculo = veiculoService.alugarVeiculoPorID(opcaoCarro);
+                        clienteService.alugarVeiculo(cliente,veiculo);
+                    }
+
                     break;
                 case 2:
                     Menu.menuVendedor1();
+                    opcao2 = sc.nextInt();
                     break;
                 case 3:
                     Menu.menuAdministrador1();
+                    opcao2 = sc.nextInt();
+                    sc.nextLine();
+                    adminService.confereEntrada(opcao2);
                     break;
                 case 0:
                     continua = false;
