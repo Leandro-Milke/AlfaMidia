@@ -53,6 +53,12 @@ public class Main {
                         int opcaoCarro = sc.nextInt();
                         Veiculo veiculo = veiculoService.alugarVeiculoPorID(opcaoCarro);
                         clienteService.alugarVeiculo(cliente,veiculo);
+                    }else if(opcao2 == 1){
+                        System.out.println("Digite o número referente ao carro desejado");
+                        clienteService.buscarCarrosAlugados(cliente);
+
+                        int opcaoCarro = sc.nextInt();
+
                     }
 
                     break;

@@ -46,15 +46,19 @@ public class VeiculoService {
                 System.out.println(veiculo);
             }
         }
-
     }
-
     public Veiculo alugarVeiculoPorID(int id){
 
         Veiculo veiculo = this.repository.buscarPorId(id);
         veiculo.setStatus(Veiculo.Status.ALUGADO);
         this.repository.salvar(veiculo);
         return veiculo;
+    }
+
+    public void devolverVeiculo(int id){
+        Veiculo veiculo = this.repository.buscarPorId(id);
+        veiculo.setStatus(Veiculo.Status.LIVRE);
+        this.repository.salvar(veiculo);
     }
 
 }

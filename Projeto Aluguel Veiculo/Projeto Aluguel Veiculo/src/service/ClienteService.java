@@ -2,6 +2,7 @@ package service;
 
 import model.Cliente;
 import model.Veiculo;
+import repository.AdministradorRepository;
 import repository.ClienteRepository;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class ClienteService {
 
     Scanner sc;
     ClienteRepository clienteRepository = new ClienteRepository();
+    private AdministradorRepository repository;
 
     public ClienteService(Scanner sc){
         this.sc = sc;
@@ -56,6 +58,18 @@ public class ClienteService {
     public void alugarVeiculo(Cliente cliente, Veiculo veiculo){
         cliente.getVeiculos().add(veiculo);
         this.clienteRepository.salvar(cliente);
+    }
+
+    public void buscarCarrosAlugados(Cliente cliente){
+        List<Veiculo> veiculosAlugados = cliente.getVeiculos();
+
+        for (Veiculo veiculo : veiculosAlugados){
+            System.out.println(veiculo);
+        }
+    }
+
+    public void removerVeiculo(Cliente clienteParm, Veiculo veiculoParm){
+        Cliente cliente = this.repository.buscarPorId(clienteParm.getId());
 
     }
 
